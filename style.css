@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* Primary */
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Neutral */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--Light-grayish-blue);
+}
+
+main {
+    display: grid;
+    /* place-items: center; */
+    gap: 1.3rem;
+    /* max-width: 60rem; */
+    margin: 3.5rem 1.3rem;
+}
+
+main .grid {
+    display: grid;
+    /* gap: 1rem; */
+    color: hsl(210, 46%, 95%);
+    padding: 1.6rem;
+    border-radius: 8px;
+    box-shadow: 42px 57px 73px -26px rgba(0,0,0,0.1);
+}
+
+.grid .profile {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.profile .avatar {
+    width: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid hsla(0, 0%, 81%, 0.5);
+}
+
+.grid .name_and_status {
+    line-height: 1.5;
+}
+
+.name_and_status .name {
+    font-size: 0.850rem;
+}
+
+.name_and_status .status {
+    font-size: 0.750rem;
+    opacity: 50%;
+}
+
+.bold, .small_thin {
+    margin-top: 1rem;
+}
+
+.grid .bold {
+    font-size: 1.350rem;
+    font-weight: 600;
+}
+
+.grid .small_thin {
+    opacity: 70%;
+    line-height: 1.3;
+    font-size: 0.860rem;
+    font-weight: 500;
+}
+
+.grid.one {
+    position: relative;
+    background-color: var(--Moderate-violet);
+}
+
+.grid.one::before {
+    content: url(images/bg-pattern-quotation.svg);
+    display: block;
+    position: absolute;
+    right: 1.6rem;
+}
+
+.grid.one > * {
+    position: relative;
+}
+
+.grid.two {
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.grid.three, .grid.five {
+    color: var(--Very-dark-grayish-blue);
+    background-color: var(--White);
+}
+
+.grid.four {
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+@media (min-width: 600px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .one {
+        grid-column: 1/3;
+    }
+}
+
+@media (min-width: 888px) {
+    .one {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        max-width: 70rem;
+    }
+}
+
+@media (min-width: 1129px) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .one {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    .three {
+        grid-row: 2/3;
+    }
+
+    .four {
+        grid-column: 2/4;
+    }
+
+    .five {
+        grid-column: 4/5;
+        grid-row: 1/3;
+    }
+}
